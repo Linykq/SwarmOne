@@ -1,0 +1,27 @@
+server:
+  addr: ":8080"
+  request_timeout: 60s
+  runner_timeout: 58s 
+
+runners:
+  - name: "openai-1"
+    provider: "openai"
+    model: "gpt-5-nano-2025-08-07"
+    max_tokens: 512
+
+  - name: "gemini-1"
+    provider: "gemini"
+    model: "gemini-2.5-flash"
+    max_tokens: 512
+
+  - name: "claude-1"
+    provider: "anthropic"
+    model: "claude-3-5-haiku-20241022"
+    max_tokens: 512
+
+consensus:
+  mode: "judge"   # "exact" | "judge"
+  judge:
+    provider: "anthropic"
+    model: "claude-3-5-haiku-20241022"
+    max_tokens: 256

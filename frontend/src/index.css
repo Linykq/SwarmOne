@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* a0.dev-like gradient + grid */
+:root {
+  --bg: radial-gradient(1200px 800px at 80% -10%, rgba(29,78,216,0.25), rgba(29,78,216,0) 40%),
+        radial-gradient(1000px 700px at -10% 20%, rgba(236,72,153,0.20), rgba(236,72,153,0) 40%),
+        linear-gradient(to bottom right, #0b1220, #0b1220 30%, #0b1220 60%);
+}
+.bg-grid {
+  background:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px) center/24px 24px,
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px) center/24px 24px,
+    var(--bg);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl bg-white/5 border border-white/10 backdrop-blur;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 bg-brand-500 hover:bg-brand-400 active:bg-brand-600 text-white font-medium shadow-soft;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl px-3 py-2 bg-white/0 hover:bg-white/5 text-zinc-200;
+  }
+  .field {
+    @apply grid gap-1.5;
+  }
+  .input, .textarea {
+    @apply w-full rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-400
+           focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:border-brand-500 px-3 py-2;
+  }
+  .textarea { @apply min-h-[120px]; }
+  .code {
+    @apply rounded-xl bg-black/50 border border-white/10 p-3 font-mono text-[12px] leading-relaxed text-zinc-100;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[12px] bg-white/10 border border-white/10;
+  }
+  .pill {
+    @apply rounded-full px-3 py-1.5 text-sm text-zinc-300 hover:text-white hover:bg-white/5;
+  }
+  .nav-active {
+    @apply text-white bg-white/10;
+  }
+}
