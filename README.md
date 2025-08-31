@@ -57,6 +57,17 @@ Response includes:
 git clone https://github.com/yourname/swarmone.git
 cd swarmone
 ```
+Create your backend/.env:
+```bash
+OPENAI_API_KEY=
+GOOGLE_API_KEY=
+ANTHROPIC_API_KEY=
+
+JUDGE_PROVIDER=
+JUDGE_MODEL=
+JUDGE_MAX_TOKENS=
+```
+
 
 ```bash
 cd backend
